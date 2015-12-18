@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
         //     up, down, left, right, or diagonally
         std::vector<long long int> listOfProducts = getAllAdjacentProds(grid);
         std::cout << "Successfully read." << std::endl;
+        // printVector(listOfProducts);
         // return the largest product in the vector
         long long int largest = returnLargestInVector(listOfProducts);
         std::cout << "Largest \"adjacent product\" in grid: " << largest;
@@ -90,6 +91,7 @@ std::vector<long long int> getAllAdjacentProds(const std::vector<std::vector<int
             int right = getRightProd(grid, row, col);
             // diagonal north-east
             int diagonal = getDiagProd(grid, row, col);
+            // std::cout << std::endl;
             allAdjacentProds.push_back(down);
             allAdjacentProds.push_back(right);
             allAdjacentProds.push_back(diagonal);
@@ -100,7 +102,7 @@ std::vector<long long int> getAllAdjacentProds(const std::vector<std::vector<int
 
 int getDownProd(std::vector<std::vector<int>> grid, int row, int col)
 {
-    if(row + 3 < grid.size()) {
+    if((row + 3) < grid.size()) {
         int prod = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
         return prod;
     } else {
@@ -110,7 +112,7 @@ int getDownProd(std::vector<std::vector<int>> grid, int row, int col)
 
 int getRightProd(std::vector<std::vector<int>> grid, int row, int col)
 {
-    if(col + 3 < grid[row].size()) {
+    if((col + 3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
         return prod;
     } else {
@@ -120,7 +122,7 @@ int getRightProd(std::vector<std::vector<int>> grid, int row, int col)
 
 int getDiagProd(std::vector<std::vector<int>> grid, int row, int col)
 {
-    if(row+3 < grid.size() && col + 3 < grid[row].size()) {
+    if((row+3) < grid.size() && (col+3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
         return prod;
     } else {
