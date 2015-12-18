@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <assert.h>
 #include "../ConvenientHeaderFiles/returnLargestInVector.h"
 #include "../ConvenientHeaderFiles/splitString.h"
 #include "../ConvenientHeaderFiles/printVector.h"
@@ -91,10 +92,12 @@ std::vector<long long int> getAllAdjacentProds(const std::vector<std::vector<int
             int right = getRightProd(grid, row, col);
             // diagonal north-east
             int diagonal = getDiagProd(grid, row, col);
-            // std::cout << std::endl;
+            std::cout << std::endl;
             allAdjacentProds.push_back(down);
             allAdjacentProds.push_back(right);
             allAdjacentProds.push_back(diagonal);
+            // printVector(allAdjacentProds);
+            // assert(false);
         }
     }
     return allAdjacentProds;
@@ -104,6 +107,13 @@ int getDownProd(std::vector<std::vector<int>> grid, int row, int col)
 {
     if((row + 3) < grid.size()) {
         int prod = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+        std::vector<int> thisList;
+        thisList.push_back(grid[row][col]);
+        thisList.push_back(grid[row+1][col]);
+        thisList.push_back(grid[row+2][col]);
+        thisList.push_back(grid[row+3][col]);
+        thisList.push_back(prod);
+        printVector(thisList);
         return prod;
     } else {
         return 0;
@@ -114,6 +124,14 @@ int getRightProd(std::vector<std::vector<int>> grid, int row, int col)
 {
     if((col + 3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+        std::vector<int> thisList;
+        thisList.push_back(grid[row][col]);
+        thisList.push_back(grid[row][col+1]);
+        thisList.push_back(grid[row][col+2]);
+        thisList.push_back(grid[row][col+3]);
+        thisList.push_back(prod);
+        printVector(thisList);
+
         return prod;
     } else {
         return 0;
@@ -124,6 +142,14 @@ int getDiagProd(std::vector<std::vector<int>> grid, int row, int col)
 {
     if((row+3) < grid.size() && (col+3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
+        std::vector<int> thisList;
+        thisList.push_back(grid[row][col]);
+        thisList.push_back(grid[row+1][col+1]);
+        thisList.push_back(grid[row+2][col+2]);
+        thisList.push_back(grid[row+3][col+3]);
+        thisList.push_back(prod);
+        printVector(thisList);
+
         return prod;
     } else {
         return 0;
