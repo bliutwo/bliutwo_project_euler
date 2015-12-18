@@ -23,12 +23,12 @@ def produceCollatzSeq(num):
 
 def main():
     listOfLengths = []
-    for num in range(1, 1000000):
+    for num in xrange(500001, 1000000, 2):
         collatzSeq = produceCollatzSeq(num)
         listOfLengths.append(len(collatzSeq))
         # percent = num / 1000000.0
         # print 'percent: %f' % percent
-    print 'maximum length with starting number: %d' % (listOfLengths.index(max(listOfLengths)) + 1)
+    print 'maximum length with starting number: %d' % ((listOfLengths.index(max(listOfLengths))*2) + 500001)
 
 if __name__ == "__main__":
     main()
