@@ -5,9 +5,10 @@
 
 int main(int argc, char* argv[])
 {
-    int num;
+    int num = 0;
     
-    scanf("%d", num);
+    printf("Enter an integer: ");
+    scanf("%d", &num);
 
     printf("This is num that you inputted: %d\n", num);
 
