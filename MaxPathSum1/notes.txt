@@ -1,0 +1,2 @@
+"Bubble up" or "Binary heap" algorithm:
+https://en.wikipedia.org/wiki/Binary_heap
