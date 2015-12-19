@@ -4,10 +4,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// TODO: write this
+void printGrid(int grid[num][num])
+{
+
+}
+
 int solvePaths(int num)
 {
     // create dynamically allocated grid of (num + 1) * (num + 1)
-
+    int grid[num][num];
+    for (int row = 0; row < num; num++)
+    {
+        for (int col = 0; col < num; num++)
+        {
+            grid[row][col] = 0;
+        }
+    }
+    printGrid(grid);
     // recursively backtrack to get number of routes to bottom right corner
     return 0;
 }
