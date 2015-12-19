@@ -131,7 +131,6 @@ int getDiagProd(std::vector<std::vector<int>> grid, int row, int col)
     } else {
         return 0;
     }
-
 }
 
 void printGrid(std::vector<std::vector<int>> grid)

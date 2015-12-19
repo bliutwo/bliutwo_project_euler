@@ -2,10 +2,13 @@
 // Description: In theory, I only need ints to solve this problem.
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int solvePaths(int num)
 {
+    // create dynamically allocated grid of (num + 1) * (num + 1)
 
+    // recursively backtrack to get number of routes to bottom right corner
     return 0;
 }
 
