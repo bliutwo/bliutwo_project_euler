@@ -20,25 +20,32 @@ def getProperDivisors(num):
     for potentialDivisor in range(1, (num/2)+1):
         if num % potentialDivisor == 0:
             listOfProperDivisors.append(potentialDivisor)
+    # printList(listOfProperDivisors)
     return listOfProperDivisors
 
 def sumOfProperDivisors(num):
     listOfProperDivisors = getProperDivisors(num)
-    return sumOfElements(listOfProperDivisors)
+    total = sumOfElements(listOfProperDivisors)
+    # print total
+    return total
 
 def getAllAmicableNumbers(upperBound):
     setOfAmicableNumbers = set()
     for potentialAmicable in range(1, upperBound):
+        # print "potentialAmicable: %d" % potentialAmicable
         if potentialAmicable not in setOfAmicableNumbers:
             secondPotentialAmicable = sumOfProperDivisors(potentialAmicable)
+            # print "secondPotentialAmicable: %d" % secondPotentialAmicable
             sumSecondDivisors = sumOfProperDivisors(secondPotentialAmicable)
+            # print "sumSecondDivisors: %d" % sumSecondDivisors
             if (sumSecondDivisors is potentialAmicable) and (secondPotentialAmicable is not potentialAmicable):
                 setOfAmicableNumbers.add(potentialAmicable)
                 setOfAmicableNumbers.add(secondPotentialAmicable)
-                print "amicable1: %d" % potentialAmicable
-                printList(getProperDivisors(potentialAmicable))
-                print "amicable2: %d" % secondPotentialAmicable
-                printList(getProperDivisors(potentialAmicable))
+                print "YES"
+                # print "amicable1: %d" % potentialAmicable
+                # printList(getProperDivisors(potentialAmicable))
+                # print "amicable2: %d" % secondPotentialAmicable
+                # printList(getProperDivisors(secondPotentialAmicable))
     return setOfAmicableNumbers
 
 def main():
@@ -49,6 +56,7 @@ def main():
     upperBound = input("Input an upper bound to compute sum of all amicable numbers: ")
     print "upperBound: %d" % upperBound
     setOfAmicableNumbers = getAllAmicableNumbers(upperBound)
+    printList(setOfAmicableNumbers)
     print "The sum of all the amicable numbers under %d is %d" % (upperBound, sumOfElements(setOfAmicableNumbers))
 
 if __name__ == "__main__":
