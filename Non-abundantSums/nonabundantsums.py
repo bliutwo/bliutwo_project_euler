@@ -16,10 +16,7 @@ from AmicableNumbers import *
 
 def isAbundant(num):
     sumProperDivisors = sumOfProperDivisors(num)
-    if sumProperDivisors > num:
-        return True
-    else:
-        return False
+    return sumProperDivisors > num
 
 # how do you find out if a number can be written as the sum of two
 # abundant numbers?
