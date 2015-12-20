@@ -33,7 +33,7 @@ def getAllAmicableNumbers(upperBound):
         if potentialAmicable not in listOfAmicableNumbers:
             secondPotentialAmicable = sumOfProperDivisors(potentialAmicable)
             sumSecondDivisors = sumOfProperDivisors(secondPotentialAmicable)
-            if (sumSecondDivisors is potentialAmicable) and (secondPotentialAmicable is not potentialAmicable):
+            if (sumSecondDivisors == potentialAmicable) and (secondPotentialAmicable != potentialAmicable):
                 listOfAmicableNumbers.append(potentialAmicable)
                 listOfAmicableNumbers.append(secondPotentialAmicable)
     return listOfAmicableNumbers
@@ -46,6 +46,9 @@ def main():
     upperBound = input("Input an upper bound to compute sum of all amicable numbers: ")
     print "upperBound: %d" % upperBound
     listOfAmicableNumbers = getAllAmicableNumbers(upperBound)
+    # for num in range(1,upperBound):
+    #     print "d(%d): %d" % (num, sumOfProperDivisors(num))
+    #     printList(getProperDivisors(num))
     printList(listOfAmicableNumbers)
     print "The sum of all the amicable numbers under %d is %d" % (upperBound, sumOfElements(listOfAmicableNumbers))
 
