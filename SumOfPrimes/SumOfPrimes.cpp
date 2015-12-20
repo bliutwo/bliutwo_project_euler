@@ -19,7 +19,7 @@ int main()
     std::cin >> input;
     // std::cout << "sqrt(" << input << ") = " << sqrt(input) << std::endl;
     std::vector<int> listOfPrimes = returnVectorOfPrimes(input);
-    printVector(listOfPrimes);
+    // printVector(listOfPrimes);
     std::cout << "The sum of all the primes below " << input << " is ";
     // std::cout << sumOfPrimes(input) << std::endl;
     std::cout << largeSumOfIntVector(listOfPrimes) << std::endl;
