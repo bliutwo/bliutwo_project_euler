@@ -3,7 +3,8 @@
 # Evaluates the sum of all the amicable numbers under 10000.
 # See main for definition of amicable number.
 
-# TODO: why doesn't this output the correct answer?
+# TODONE: why doesn't this output the correct answer?
+# UPDATE: It does! And it's because "is not" != "!="
 
 def printList(samplelist):
     samplestring = ",".join(map(str,samplelist))

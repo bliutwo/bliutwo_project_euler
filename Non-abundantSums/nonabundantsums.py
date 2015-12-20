@@ -6,7 +6,6 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, '../AmicableNumbers/')
 from AmicableNumbers import *
 
-
 def main():
     print "Hello world!"
 
