@@ -3,6 +3,7 @@
 #              Find sum of digits of n!
 
 import sys
+sys.dont_write_bytecode = True
 sys.path.insert(0, '../PowerDigitSum/')
 from PowerDigitSum import *
 import math
