@@ -17,7 +17,7 @@ def sumOfElements(listOfInts):
 
 def getProperDivisors(num):
     listOfProperDivisors = []
-    for potentialDivisor in range(1, (num/2)+1):
+    for potentialDivisor in xrange(1, (num/2)+1):
         if num % potentialDivisor == 0:
             listOfProperDivisors.append(potentialDivisor)
     return listOfProperDivisors
@@ -29,7 +29,7 @@ def sumOfProperDivisors(num):
 
 def getAllAmicableNumbers(upperBound):
     listOfAmicableNumbers = []
-    for potentialAmicable in range(1, upperBound):
+    for potentialAmicable in xrange(1, upperBound):
         if potentialAmicable not in listOfAmicableNumbers:
             secondPotentialAmicable = sumOfProperDivisors(potentialAmicable)
             sumSecondDivisors = sumOfProperDivisors(secondPotentialAmicable)
@@ -46,7 +46,7 @@ def main():
     upperBound = input("Input an upper bound to compute sum of all amicable numbers: ")
     print "upperBound: %d" % upperBound
     listOfAmicableNumbers = getAllAmicableNumbers(upperBound)
-    # for num in range(1,upperBound):
+    # for num in xrange(1,upperBound):
     #     print "d(%d): %d" % (num, sumOfProperDivisors(num))
     #     printList(getProperDivisors(num))
     printList(listOfAmicableNumbers)
