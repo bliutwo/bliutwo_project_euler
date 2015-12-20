@@ -1,6 +1,9 @@
 # File: PowerDigitSum.py
 # Description: https://projecteuler.net/problem=16
 
+import sys
+sys.dont_write_bytecode = True
+
 def parseNum(num):
     parsedNum = []
     number_string = str(num)
