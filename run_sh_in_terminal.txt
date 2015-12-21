@@ -1,0 +1,1 @@
+http://askubuntu.com/questions/38661/how-do-i-run-sh-files-in-terminal
