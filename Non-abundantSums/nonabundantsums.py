@@ -6,7 +6,7 @@
 # Abundant number: sum of its proper divisors exceeds 'number'
 
 # TODONE: this program takes forever to run. Why?
-# UPDATE: You used sets instead of lists!
+# UPDATE: You used lists instead of sets, which are much faster!
 
 import sys
 sys.dont_write_bytecode = True
