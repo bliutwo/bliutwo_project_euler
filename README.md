@@ -8,3 +8,5 @@ solutions / solved the problems yourself so that you don't ruin the
 process and pleasure of solving the problem yourself!
 
 Solved problems: 1-10,13,14,16,20,21,23
+
+Total: 16
