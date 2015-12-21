@@ -44,18 +44,17 @@ def getAllAbundantNumbersSums(listOfAbundantNumbers):
 def main():
     totalSum = 0
     # 12 is the smallest abundant number
-    listOfAbundantNumbers = getAllAbundantNumbers(12, 28124)
+    listOfAbundantNumbers = getAllAbundantNumbers(1, 28124)
     print "got list of abundant numbers"
-    listOfPositiveIntegers = []
-    for num in xrange(24, 28124):
-        listOfPositiveIntegers.append(num)
+    setOfPositiveIntegers = set()
+    for num in xrange(1, 28124):
+        setOfPositiveIntegers.add(num)
     listOfAbundantNumbersSums = getAllAbundantNumbersSums(listOfAbundantNumbers)
     print "got list of abundant numbers sums"
     for num in listOfAbundantNumbersSums:
-        if num in listOfPositiveIntegers:
-            listOfPositiveIntegers.remove(num)
+        setOfPositiveIntegers.discard(num)
     print "filtered list of positive integers"
-    print "The sum of all positive integers which cannot be written as the sum of two abundant numbers is: %d" %  sumOfElements(listOfPositiveIntegers)
+    print "The sum of all positive integers which cannot be written as the sum of two abundant numbers is: %d" %  sumOfElements(setOfPositiveIntegers)
 
 if __name__ == "__main__":
     main()
