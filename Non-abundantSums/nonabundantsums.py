@@ -5,7 +5,8 @@
 # the sum of two abundant numbers.
 # Abundant number: sum of its proper divisors exceeds 'number'
 
-# TODO: this program takes forever to run. Why?
+# TODONE: this program takes forever to run. Why?
+# UPDATE: You used sets instead of lists!
 
 import sys
 sys.dont_write_bytecode = True
