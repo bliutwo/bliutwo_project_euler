@@ -1,3 +1,13 @@
-I'm thinking of implementing a recursive backtracking algorithm to solve problem 15 using a grid data structure that has 0's and 1's (0 - not visited, 1 - visited). I could solve this problem via combinatorics, or I could use a recursive backtracking algorithm. Btw, the answer that Sparrowhawks gave 20 choose 20 or whatever is wrong DuckerZ Also, instead of recursive backtracking, just "simple recursion" as explained by bpaf. y code take so long BibleThump
+Problem 15:
+I'm thinking of implementing a recursive backtracking algorithm to solve
+problem 15 using a grid data structure that has 0's and 1's (0 - not
+visited, 1 - visited). I could solve this problem via combinatorics, or I
+could use a recursive backtracking algorithm. Btw, the answer that
+Sparrowhawks gave 20 choose 20 or whatever is wrong DuckerZ Also, instead
+of recursive backtracking, just "simple recursion" as explained by bpaf.
 
+Problem 23:
+Whyy code take so long BibleThump - it's cuz you used lists and not sets
 
+Problem 26:
+https://en.wikipedia.org/wiki/Long_division#Basic_procedure_for_long_division_of_n_.C3.B7_m
