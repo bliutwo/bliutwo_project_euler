@@ -7,7 +7,14 @@
 // TODO: write this
 void printGrid(int grid[num][num])
 {
-
+    for (int row = 0; row < num; row++)
+    {
+        for (int col = 0; col < num; col++)
+        {
+            // 145237
+            // http://www.kbb.com/company/privacy-policy/
+        }
+    }
 }
 
 int solvePaths(int num)
