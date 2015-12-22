@@ -1,0 +1,3 @@
+I'm thinking of implementing a recursive backtracking algorithm to solve problem 15 using a grid data structure that has 0's and 1's (0 - not visited, 1 - visited). I could solve this problem via combinatorics, or I could use a recursive backtracking algorithm. Btw, the answer that Sparrowhawks gave 20 choose 20 or whatever is wrong DuckerZ Also, instead of recursive backtracking, just "simple recursion" as explained by bpaf. y code take so long BibleThump
+
+
