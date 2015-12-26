@@ -1,0 +1,5 @@
+// apparently the starting digits are 3 or 7
+// truncatable primes can only end in 3 or 7
+// further, 2 or 5 can only occur at most once in the prime, and only
+// in the beginning
+// and only the digits 1 2 3 5 7 9 can be used to build it up (naturally)
