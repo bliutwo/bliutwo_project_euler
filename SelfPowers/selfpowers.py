@@ -1,5 +1,7 @@
 # Filename: selfpowers.py
 # Description: https://projecteuler.net/problem=48
+# TODO: Rewrite to include more efficient algorithm using built-in ftn pow
+#       i.e. pow(x, y, z), where computes the modulo of x**y by z
 
 import sys
 sys.dont_write_bytecode = True
