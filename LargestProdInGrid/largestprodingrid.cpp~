@@ -5,17 +5,18 @@
 #include "../ConvenientHeaderFiles/returnLargestInVector.h"
 #include "../ConvenientHeaderFiles/splitString.h"
 #include "../ConvenientHeaderFiles/printVector.h"
+#include <cstdlib>
 
 // TODO: why doesn't this return the correct answer?
 //       perhaps change all ints to long ints?
 
-std::vector<std::vector<int>> parseGrid(char*);
-std::vector<long long int> getAllAdjacentProds(const std::vector<std::vector<int>> grid);
+std::vector< std::vector<int> > parseGrid(char*);
+std::vector<long long int> getAllAdjacentProds(const std::vector< std::vector<int> > grid);
 std::vector<int> parseListOfInts(std::string line);
-void printGrid(std::vector<std::vector<int>>);
-int getDiagProd(std::vector<std::vector<int>> grid, int row, int col);
-int getRightProd(std::vector<std::vector<int>> grid, int row, int col);
-int getDownProd(std::vector<std::vector<int>> grid, int row, int col);
+void printGrid(std::vector< std::vector<int> >);
+int getDiagProd(std::vector< std::vector<int> > grid, int row, int col);
+int getRightProd(std::vector< std::vector<int> > grid, int row, int col);
+int getDownProd(std::vector< std::vector<int> > grid, int row, int col);
 
 int main(int argc, char* argv[])
 {
@@ -27,7 +28,7 @@ int main(int argc, char* argv[])
         return 0;
     }
     // read in the file
-    std::vector<std::vector<int>> grid = parseGrid(argv[1]);
+    std::vector< std::vector<int> > grid = parseGrid(argv[1]);
     // printGrid(grid);
     if(!grid.empty()) {
         // get a vector of the products of all possible adjacent numbers
@@ -45,10 +46,10 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-std::vector<std::vector<int>> parseGrid(char* filename)
+std::vector< std::vector<int> > parseGrid(char* filename)
 {
     // std::cout << "Filename: " << filename << std::endl;
-    std::vector<std::vector<int>> grid;
+    std::vector< std::vector<int> > grid;
     // lines are rows, inside vector
     std::ifstream fileObj;
     fileObj.open(filename, std::ios::in);
@@ -74,12 +75,14 @@ std::vector<int> parseListOfInts(std::string line)
     for (int i = 0; i < listOfStringInts.size(); i++)
     {
         // convert each string to an int, then add to listOfInts
-        listOfInts.push_back(std::stoi(listOfStringInts[i]));
+        // changed from std::stoi because the compiler on linux doesn't
+        // support stoi for some reason
+        listOfInts.push_back(std::atoi(listOfStringInts[i].c_str()));
     }
     return listOfInts;
 }
 
-std::vector<long long int> getAllAdjacentProds(const std::vector<std::vector<int>> grid)
+std::vector<long long int> getAllAdjacentProds(const std::vector< std::vector<int> > grid)
 {
     std::vector<long long int> allAdjacentProds;
     // for each number, get all possible adjacent products
@@ -103,37 +106,49 @@ std::vector<long long int> getAllAdjacentProds(const std::vector<std::vector<int
     return allAdjacentProds;
 }
 
-int getDownProd(std::vector<std::vector<int>> grid, int row, int col)
+int getDownProd(std::vector< std::vector<int> > grid, int row, int col)
 {
-    if((row + 3) < grid.size()) {
+    if((row+3) < grid.size()) {
         int prod = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+        if(grid[row][col] == 76 && grid[row+1][col] == 36 && grid[row+2][col] == 5 && grid[row+3][col] == 67)
+        {
+            std::cout << "76*36*5*67 = " << prod << std::endl;
+        }
         return prod;
     } else {
         return 0;
     }
 }
 
-int getRightProd(std::vector<std::vector<int>> grid, int row, int col)
+int getRightProd(std::vector< std::vector<int> > grid, int row, int col)
 {
-    if((col + 3) < (grid[row]).size()) {
+    if((col+3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+        if(grid[row][col] == 89 && grid[row][col+1] == 19 && grid[row][col+2] == 67 && grid[row][col+3] == 48)
+        {
+            std::cout << "89*19*67*48 = " << prod << std::endl;
+        }
         return prod;
     } else {
         return 0;
     }
 }
 
-int getDiagProd(std::vector<std::vector<int>> grid, int row, int col)
+int getDiagProd(std::vector< std::vector<int> > grid, int row, int col)
 {
     if((row+3) < grid.size() && (col+3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
+        if(grid[row][col] == 26 && grid[row+1][col+1] == 63 && grid[row+2][col+2] == 78 && grid[row+3][col+3] == 14)
+        {
+            std::cout << "26*63*78*14 = " << prod << std::endl;
+        }
         return prod;
     } else {
         return 0;
     }
 }
 
-void printGrid(std::vector<std::vector<int>> grid)
+void printGrid(std::vector< std::vector<int> > grid)
 {
     for (int i = 0; i < grid.size(); i++)
     {
