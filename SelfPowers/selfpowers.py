@@ -2,6 +2,8 @@
 # Description: https://projecteuler.net/problem=48
 # TODO: Rewrite to include more efficient algorithm using built-in ftn pow
 #       i.e. pow(x, y, z), where computes the modulo of x**y by z
+# Galvabart writes:
+# type this in python: sum([pow(i, i, 10**10) for i in range(1,1001)]) % 10**10
 
 import sys
 sys.dont_write_bytecode = True

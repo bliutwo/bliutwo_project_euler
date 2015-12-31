@@ -7,7 +7,7 @@
 template <class T>
 inline void printVector(std::vector<T> &v)
 {
-    std::cout << "{";
+    std::cout << "[";
     for (int i = 0; i < v.size(); i++)
     {
         std::cout << v[i];
@@ -16,7 +16,7 @@ inline void printVector(std::vector<T> &v)
             std::cout << ", ";
         }
     }
-    std::cout << "}" << std::endl;
+    std::cout << "]" << std::endl;
 }
 
 #endif
