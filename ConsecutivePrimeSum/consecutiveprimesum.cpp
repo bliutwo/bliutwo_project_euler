@@ -60,6 +60,7 @@ int main(int argc, char* argv[])
     std::cin >> limit;
     std::vector<int> listOfPrimes = returnVectorOfPrimes(limit);
     int upperBound = longestConsecSeqSumBelowMillion(listOfPrimes, limit);
+	printVector(listOfPrimes);
     std::cout << "upperBound on length of sequence: " << upperBound << std::endl;
     std::cout << "The prime below " << limit << " that can be written as the ";
     std::cout << std::endl;
