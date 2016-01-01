@@ -6,7 +6,10 @@
 // TODO: implement this
 int getLargestPandigitalPrime(int digits)
 {
-
+	// start with digits, digits - 1, digits - 2, etc.
+	// then switch them such that you go down the list of highest to lowest
+	// possible number
+	// check if prime every time
 	return -1;
 }
 
