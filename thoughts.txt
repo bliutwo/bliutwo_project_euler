@@ -14,3 +14,8 @@ Whyy code take so long BibleThump - it's cuz you used lists and not sets
 
 Problem 26:
 https://en.wikipedia.org/wiki/Long_division#Basic_procedure_for_long_division_of_n_.C3.B7_m
+
+Problem 43:
+Bliutwo heres my suggestion. Generate all combinations of length 3 that
+are from 0-9 that are divisible by 17. Then add 1 to the front for all
+possibilities and see if its divisible by 15. etc etc.
