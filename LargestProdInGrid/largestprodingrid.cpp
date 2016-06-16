@@ -110,10 +110,12 @@ int getDownProd(std::vector< std::vector<int> > grid, int row, int col)
 {
     if((row+3) < grid.size()) {
         int prod = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+        /*
         if(grid[row][col] == 76 && grid[row+1][col] == 36 && grid[row+2][col] == 5 && grid[row+3][col] == 67)
         {
             std::cout << "76*36*5*67 = " << prod << std::endl;
         }
+        */
         return prod;
     } else {
         return 0;
@@ -124,10 +126,12 @@ int getRightProd(std::vector< std::vector<int> > grid, int row, int col)
 {
     if((col+3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+        /*
         if(grid[row][col] == 89 && grid[row][col+1] == 19 && grid[row][col+2] == 67 && grid[row][col+3] == 48)
         {
             std::cout << "89*19*67*48 = " << prod << std::endl;
         }
+        */
         return prod;
     } else {
         return 0;
@@ -138,10 +142,12 @@ int getDiagProd(std::vector< std::vector<int> > grid, int row, int col)
 {
     if((row+3) < grid.size() && (col+3) < (grid[row]).size()) {
         int prod = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
+        /*
         if(grid[row][col] == 26 && grid[row+1][col+1] == 63 && grid[row+2][col+2] == 78 && grid[row+3][col+3] == 14)
         {
             std::cout << "26*63*78*14 = " << prod << std::endl;
         }
+        */
         return prod;
     } else {
         return 0;

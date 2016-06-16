@@ -1,11 +1,11 @@
-// File: LatticePaths.c
+// File: latticepaths.c
 // Description: In theory, I only need ints to solve this problem.
 
 #include <stdio.h>
 #include <stdlib.h>
 
 // TODO: write this
-void printGrid(int grid[num][num])
+void printGrid(int num, int grid[][num])
 {
     for (int row = 0; row < num; row++)
     {
@@ -13,7 +13,9 @@ void printGrid(int grid[num][num])
         {
             // 145237
             // http://www.kbb.com/company/privacy-policy/
+            printf("%d ", grid[row][col]);
         }
+        printf("\n");
     }
 }
 
@@ -28,7 +30,7 @@ int solvePaths(int num)
             grid[row][col] = 0;
         }
     }
-    printGrid(grid);
+    printGrid(num, grid);
     // recursively backtrack to get number of routes to bottom right corner
     return 0;
 }

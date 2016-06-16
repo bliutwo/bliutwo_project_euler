@@ -28,7 +28,7 @@ LDFLAGS += -m32
 
 # The line below defines the variable 'PROGRAMS' to name all of the executables
 # to be built by this makefile
-PROGRAMS = LatticePaths
+PROGRAMS = latticepaths
 
 # The line below defines a target named 'all', configured to trigger the
 # build of everything named in the 'PROGRAMS' variable. The first target
