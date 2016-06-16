@@ -9,6 +9,9 @@ import argparse
 from chemoUtils import getGrid
 sys.dont_write_bytecode = True
 
+def getGreatest(intList):
+    return 0
+
 def getProduct(prodList):
     product = 1
     for elem in prodList:

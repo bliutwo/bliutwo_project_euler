@@ -2,6 +2,8 @@
 # File:   chemoUtils.py
 # Description: utilities file containing class and function definitions
 
+import sys
+sys.dont_write_bytecode = True
 from sets import *
 import random
 
