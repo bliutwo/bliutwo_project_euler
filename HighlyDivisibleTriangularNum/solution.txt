@@ -1,0 +1,2 @@
+The first triangle number to have over 500 divisors is 76576500
+

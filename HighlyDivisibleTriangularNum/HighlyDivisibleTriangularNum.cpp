@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../ConvenientHeaderFiles/returnVectorOfPrimes.h"
 #include <vector>
+#include <fstream>
 
 // TODO: figure out a faster way to solve this problem
 //       has to do with divisor function and this link:
@@ -42,6 +43,14 @@ int main(int argc, char* argv[])
         {
             std::cout << "The first triangle number to have over 500 divisors ";
             std::cout << "is: " << triangleNum << std::endl;
+            std::ofstream myfile ("solution.txt");
+            if (myfile.is_open())
+            {
+                myfile << "The first triangle number to have over 500 divisors is ";
+                myfile << triangleNum;
+                myfile.close();
+            }
+            else std::cout << "Unable to open file\n";
             break;
         }
         std::cout << std::endl;

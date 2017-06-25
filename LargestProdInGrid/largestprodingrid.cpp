@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
     }
     // read in the file
     std::vector< std::vector<int> > grid = parseGrid(argv[1]);
-    // printGrid(grid);
+    printGrid(grid);
     if(!grid.empty()) {
         // get a vector of the products of all possible adjacent numbers
         //     up, down, left, right, or diagonally
