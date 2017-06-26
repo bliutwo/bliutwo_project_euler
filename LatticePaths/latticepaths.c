@@ -30,7 +30,11 @@ int solvePaths(int num)
             grid[row][col] = 0;
         }
     }
+    printf("Before\n");
+    printf("%d\n", grid[0][0]);
+    printf("\n");
     printGrid(num, grid);
+    printf("After\n");
     // recursively backtrack to get number of routes to bottom right corner
     return 0;
 }
