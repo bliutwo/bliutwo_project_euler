@@ -1,7 +1,9 @@
 # Filename: largestprodingrid.py
 # Description: Returns the largest product in a grid.
 
-# TODO: right algorithm seems ok, but down algorithm is probably off
+# TODO: right algorithm ok
+# TODO: check accuracy of down
+# TODO: convert grid to downgrid, then use right algorithm
 # TODO: the rest of it, mainly diagonal
 
 import sys
@@ -16,40 +18,32 @@ def get_product(prodList):
     product = 1
     for elem in prodList:
         product = product * elem
-    print "in function get_product()"
-    print product
+#    print "in function get_product()"
+#    print prodList
+#    print product
     return product
 
 def get_all_right(grid):
+    print "in function get_all_right()"
     listOfRight = []
     for row in grid:
+#        print row
         lastElemIndex = len(row) - 1
-        while (lastElemIndex - 4 > 0):
-            print "we've entered the while loop"
+#        print len(row)
+#        print lastElemIndex
+        while (lastElemIndex - 1 > 0):
+#            print "we've entered the while loop"
             prodList = []
             for i in range(0,3):
                 prodList.append(row[lastElemIndex - i])
+#            print prodList
+#            print row
             product = get_product(prodList)
+#            print product
             listOfRight.append(product)
             lastElemIndex = lastElemIndex - 1
-    print "in function get_all_right()"
-    print listOfRight
+#    print listOfRight
     return listOfRight
-
-def get_all_down(grid):
-    allDown = []
-    rowLength = len(grid[0])
-    colLength = len(grid)
-    for col in range(3, colLength - 1):
-        for row in range(0, rowLength - 1):
-            prodList = []
-            for i in range(0,3):
-                prodList.append(grid[row][col - i])
-            product = get_product(prodList)
-            allDown.append(product)
-    print "in function get_all_down()"
-    print allDown
-    return allDown
 
 def get_all_diag(grid):
     allDiag = []
@@ -60,11 +54,19 @@ def get_all_diag(grid):
     print allDiag
     return allDiag
 
+def make_down_grid(g):
+    dg = []
+    return dg
+
 def get_largest_multiplicant(grid):
-    allDown  = get_all_down(grid)
-    print allDown
     allRight = get_all_right(grid)
     print allRight
+    dg = make_down_grid(grid)
+    allDown  = get_all_right(dg)
+    print allDown
+
+    assert(False)
+
     allDiag  = get_all_diag(grid)
     print allDiag
     allProds = allDown + allRight + allDiag
@@ -76,8 +78,22 @@ def print_grid(g):
     for l in g:
         s = ""
         for w in l:
-            s = s + w + " "
+            s = s + str(w) + " "
         print s
+
+def int_up_grid(sg):
+    ig = []
+    for r in sg:
+        tl = []
+        s = r[0]
+        lol = s.split()
+#        print lol
+        for unit in lol:
+            n = int(unit)
+            tl.append(n)
+        ig.append(tl)
+#        print ig
+    return ig
 
 def main():
     parser = argparse.ArgumentParser(description='Returns the largest product in a grid.')
@@ -87,11 +103,20 @@ def main():
     gridfile = open(args.grid)
     grid = getGrid(gridfile)
 
+    print "Just before print_grid"
     print_grid(grid)
 
     gridfile.close()
 
-    largestMultiplicant = get_largest_multiplicant(grid)
+#    print "Just before print_grid2" 
+#    print_grid(grid)
+    g = int_up_grid(grid)
+#    print g
+    
+    print "PRINT_GRID G"
+    print_grid(g)
+
+    largestMultiplicant = get_largest_multiplicant(g)
     
     print("largest multiplicant is: %d" % largestMultiplicant)
 
