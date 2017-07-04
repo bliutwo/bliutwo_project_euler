@@ -7,9 +7,10 @@
 # TODO: the rest of it, mainly diagonal
 
 import sys
+sys.dont_write_bytecode = True
+
 import argparse
 from chemoUtils import getGrid
-sys.dont_write_bytecode = True
 
 def get_greatest(intList):
     return max(intList)
@@ -54,6 +55,7 @@ def get_all_diag(grid):
     print allDiag
     return allDiag
 
+# TODO
 def make_down_grid(g):
     dg = []
     return dg
