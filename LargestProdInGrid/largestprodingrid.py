@@ -69,6 +69,11 @@ def get_all_right(grid):
 # TODO
 def get_all_diag(grid):
     allDiag = []
+    numRows = len(grid)
+    numCols = len(grid[0])
+    print numRows
+    print numCols
+    assert(False)
     return allDiag
 
 def make_down_grid(g):
@@ -89,9 +94,9 @@ def get_largest_multiplicant(grid):
 #    print_grid(dg)
     allDown  = get_all_right(dg)
 #    print allDown
-    assert(False)
     allDiag  = get_all_diag(grid)
     print allDiag
+    assert(False)
     allProds = allDown + allRight + allDiag
     print allProds
     greatestProduct = get_greatest(allProds)
