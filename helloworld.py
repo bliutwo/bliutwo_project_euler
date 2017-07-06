@@ -14,6 +14,7 @@ def main():
     sumtime = end - start
     print "DONE!"
     print sumtime
+#    print t
 #    fo = open("results.txt", "wb")
 #    fo.write("%d\n%.8f\n" % (t, sumtime))
 #    fo.close()
