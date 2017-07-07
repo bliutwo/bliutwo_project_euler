@@ -21,7 +21,9 @@ def make_tri_list(a,b):
         l.append(tri_form(i))
     return l
     
-triangles = make_tri_list(0, 1000)
+triangles = make_tri_list(0, 20)
+
+print triangles
 
 def is_triangle(t):
     return (t in triangles)
