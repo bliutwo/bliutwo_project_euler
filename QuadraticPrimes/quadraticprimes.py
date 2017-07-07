@@ -29,10 +29,10 @@ def main():
     maxConsPr = 0
     t = 0
 
-    s = -1000000
+    s = 1000
     e = 1000000
 
-    for a in range(s, e):
+    for a in range((s+1), e):
         for b in range(s, e):
             l = num_cons_pr(a, b)
             ncp = len(l)
@@ -48,7 +48,7 @@ def main():
     print "DONE!"
     print sumtime
     print t
-    fo = open("results.txt", "wb")
+    fo = open("e_results.txt", "wb")
     fo.write("%d\n%.8f\n" % (t, sumtime))
     fo.close()
 
