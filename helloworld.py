@@ -9,7 +9,9 @@ import time
 def main():
     print "Calculating..."
     start = time.time()
-    print "Hello world!"
+
+    # START CODE HERE
+
     end = time.time()
     sumtime = end - start
     print "DONE!"

@@ -11,7 +11,7 @@ def main():
     print "Calculating..."
     start = time.time()
     
-
+    
     
     end = time.time()
     sumtime = end - start
