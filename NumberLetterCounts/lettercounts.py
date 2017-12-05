@@ -11,7 +11,9 @@ import numstowords
 def main():
     num_letters = 0
     for i in range(1,1001):
-        num_letters += len(numstowords.numToWord(i))
+        num = numstowords.numToWord(str(i))
+        num_letters += len(num)
+        print "%d\t%s" % (i, num)
     print "Total letters: %d" % num_letters
 
 if __name__ == "__main__":

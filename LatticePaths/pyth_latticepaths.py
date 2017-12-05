@@ -20,6 +20,8 @@ def print_grid(g):
             s = s + str(i) + " "
         print s
 
+# TODO: do this
+# returns the number of paths in the grid
 def solve_paths(g):
     return 0
 
