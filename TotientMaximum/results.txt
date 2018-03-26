@@ -1,0 +1,2 @@
+The Totient output for 3 is: 0
+0.00100017

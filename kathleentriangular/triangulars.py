@@ -1,10 +1,21 @@
-# Filename: countingsundays.py
-# Description: https://projecteuler.net/problem=19
+# Filename: triangulars.py
+# Description: takes an integer, outputs two columns:
+#              numbers up to the integer, its triangular number
 
 import sys
 sys.dont_write_bytecode = True
 
 import time
+
+def triangle(n):
+    r = 0
+    for i in range(0, n + 1):
+        r += i
+    return r
+
+def triangular(num):
+    for i in range(1,(num+1)):
+        print "%d\t%d" % (i, triangle(i))
 
 def main():
     print "Calculating..."
@@ -12,18 +23,7 @@ def main():
 
     # START CODE HERE
 
-    # current date
-    year = 1900
-    day = 1
-    month = 1
-    # day of week
-    dow = 1
-
-    # limits
-    max_months = 12
-    max_dow = 7
-
-    
+    triangular(20)
 
     end = time.time()
     sumtime = end - start
