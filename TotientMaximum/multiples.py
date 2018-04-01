@@ -1,6 +1,6 @@
 # Filename: multiples.py
 # Description: Returns a list of the multiples of an integer,
-#              NOT including the integer itself
+#              INCLUDING the integer itself
 
 import sys
 sys.dont_write_bytecode = True
@@ -12,6 +12,7 @@ def multiples(n):
     for i in range(1,(n/2)+1):
         if n % i == 0:
             l.append(i)
+    l.append(n)
     return l
 
 def main():

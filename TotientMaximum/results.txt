@@ -1,2 +1,2 @@
-The Totient output for 3 is: 0
-0.00100017
+The Totient output for 10 is: 4
+0.00164890
