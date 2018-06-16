@@ -1,2 +1,2 @@
-The Totient output for 10 is: 4
-0.00164890
+210
+46.15635681

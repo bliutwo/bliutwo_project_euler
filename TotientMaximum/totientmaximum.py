@@ -1,5 +1,6 @@
 # Filename: totientmaximum.py
 # Description: https://projecteuler.net/problem=69
+# TODO: the problem is that it takes too long - maybe multithreading?
 
 import sys
 sys.dont_write_bytecode = True
@@ -39,10 +40,25 @@ def main():
     start = time.time()
 
     # START CODE HERE
+    # biggest = 1000000
+    biggest = 1000
+#    for i in range(2,biggest+1):
+#        t = "The Totient output for %d is: %d\t%.5f" % (i, totient(i), float(i) / totient(i))
+#        print t
 
-    for i in range(2,11):
-        t = "The Totient output for %d is: %d" % (i, totient(i))
-        print t
+    ns = []
+    for i in range(2,biggest+1):
+        ns.append(i)
+
+    quotients = []
+    for i in ns:
+        quotients.append(float(i) / totient(i))
+
+# https://stackoverflow.com/questions/3989016/how-to-find-all-positions-of-the-maximum-value-in-a-list
+    m = max(quotients)
+    a = [i for i, j in enumerate(quotients) if j == m]
+
+    t = ns[a[0]]
 
     end = time.time()
     sumtime = end - start

@@ -1,5 +1,5 @@
-# Filename: 
-# Description:
+# Filename: digitcancellingfractions.py
+# Description: https://projecteuler.net/problem=33
 
 import sys
 sys.dont_write_bytecode = True
@@ -19,7 +19,7 @@ def main():
     print sumtime
 #    print t
 #    fo = open("results.txt", "wb")
-#    fo.write("%r\n%.8f\n" % (t, sumtime))
+#    fo.write("%d\n%.8f\n" % (t, sumtime))
 #    fo.close()
 
 

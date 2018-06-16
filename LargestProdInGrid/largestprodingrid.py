@@ -44,7 +44,7 @@ def get_product(prodList):
     return product
 
 def get_all_right(grid):
-    print "in function get_all_right()"
+    # print "in function get_all_right()"
     listOfRight = []
     for row in grid:
 #        print row
@@ -58,6 +58,7 @@ def get_all_right(grid):
                 prodList.append(row[lastElemIndex - i])
 #            print prodList
 #            print row
+            print prodList
             product = get_product(prodList)
 #            print product
             listOfRight.append(product)
@@ -65,6 +66,35 @@ def get_all_right(grid):
 #    print listOfRight
     return listOfRight
 
+def valid_diag(i, j, numRows, numCols):
+    # there are four numbers, including where we are now
+    # so the maximum index should be i or j + 3
+    return ((i + 3) < numRows) and ((j + 3) < numCols)
+
+def get_diag_prod(i, j, grid):
+    l = []
+    for a in range(0,4):
+        l.append(grid[i+a][j+a])
+    prod = 1
+    # print l
+    for value in l:
+        prod = prod * value
+    return prod
+
+def other_valid_diag(i, j, numRows, numCols):
+    # there are four numbers, including where we are now
+    # so the minimum index should be i or j - 3
+    return ((i - 3) < numRows) and ((j - 3) < numCols)
+
+def get_other_diag_prod(i, j, grid):
+    l = []
+    for a in range(0,4):
+        l.append(grid[i-a][j-a])
+    prod = 1
+    # print l
+    for value in l:
+        prod = prod * value
+    return prod
 
 # TODO
 def get_all_diag(grid):
@@ -73,7 +103,14 @@ def get_all_diag(grid):
     numCols = len(grid[0])
     print numRows
     print numCols
-    assert(False)
+    for i in range(0, numRows):
+        for j in range(0, numCols):
+            if valid_diag(i, j, numRows, numCols):
+                prod = get_diag_prod(i, j, grid)
+                allDiag.append(prod)
+            if other_valid_diag(i,j, numRows, numCols):
+                prod = get_other_diag_prod(i, j, grid)
+                allDiag.append(prod)
     return allDiag
 
 def make_down_grid(g):
@@ -89,16 +126,17 @@ def get_largest_multiplicant(grid):
     allRight = get_all_right(grid)
 #    print allRight
     dg = make_down_grid(grid)
-#    print_grid(grid)
-#    print "About to print dg"
-#    print_grid(dg)
+    # print_grid(grid)
+    print "About to print dg"
+    # print_grid(dg)
     allDown  = get_all_right(dg)
 #    print allDown
     allDiag  = get_all_diag(grid)
-    print allDiag
-    assert(False)
+    #print allDiag
     allProds = allDown + allRight + allDiag
-    print allProds
+    print "len(allProds):"
+    print len(allProds)
+    #print allProds
     greatestProduct = get_greatest(allProds)
     return greatestProduct
 
@@ -134,8 +172,8 @@ def main():
     g = int_up_grid(grid)
 #    print g
     
-    print "PRINT_GRID G"
-    print_grid(g)
+    #print "PRINT_GRID G"
+    #print_grid(g)
 
     largestMultiplicant = get_largest_multiplicant(g)
     
