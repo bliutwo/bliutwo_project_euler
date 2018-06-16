@@ -9,4 +9,4 @@ process and pleasure of solving the problem yourself!
 
 Solved problems: 1-10,12-14,16,17,20-25,27,28,30,34-37,39,41-50,52,53
 
-Total: 40
+Total: 41
