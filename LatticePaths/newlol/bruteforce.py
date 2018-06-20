@@ -12,7 +12,7 @@ def main():
     start = time.time()
 
     # START CODE HERE
-    dimension = 6
+    dimension = 3
     s = ""
     for i in range(0, dimension):
     	s += "a"
